@@ -6,10 +6,11 @@ a2 >> pianovel(P[(0,2,4),(4,5,2),(5,8,4),(-2,3,1)].shuffle(), amp=0.5, dur=2, vi
 a3 >> pianovel(P[0,2,3] + P[0,2,4,6].shuffle(), amp=0.7 * var([1,0],[3,2,0.5,1,0.5]), dur=0.5, lpf=expvar([500,2000],25))
 a4 >> pianovel(P[6,3,2,1,1,1,1,8,9] | [0,2,-1], amp=0.6 * linvar([1,0.2],64), lpf=expvar([500,2000],42), dur=P[0.5,0.66,1,2].shuffle())
 
-Group(a2,a3,a4).formant=1
+Group(a2,a3,a4).formant=0
 Group(a2,a3,a4).chop=3
 Group(a2,a3,a4).dur=1
 
+a1.stop()
 a_all.stop()
 
 a4.solo(0)
