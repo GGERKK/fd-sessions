@@ -11,7 +11,7 @@ b1 >> bass([0,2,4,-4,0,2,0,-2], amp=0.3, dur=4, sus=4.2, blur=2)
 b1.stop()
 
 c1 >> fmrhodes(P[-2,2] | [-2,2] | [2,1] | 4, amp=0.2, dur=var([0.5,2],[2,2]), echo=0.75, room=1, mix=0.4, pan=-0.3)
-c2 >> rlead(P[0,1,2,3] | [0,1,2,3] | [0,1,2,3] | [3,2,1,0], amp=0.6, hpf=linvar([200,1500],16), pan=0.5)
+c2 >> rlead(P[0,1,2,3] | [0,1,2,3] | [0,1,2,3] | [3,2,1,0], amp=0.6 * var([1,0],32), hpf=linvar([200,1500],16), pan=0.5)
 c3 >> filthysaw([0,2,4,-2], amp=0.3, dur=16, blur=1.5, room=0.4, mix=0.2, chop=0, lpf=expvar([400,5000],128))
 
 c3.degree=0
